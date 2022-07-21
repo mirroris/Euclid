@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 
 long pyn=535225;
 long e=521;
@@ -7,7 +8,7 @@ long b[30];
 long c1[30];
 long c2[30];
 
-#define MAX 29;
+#define MAX 29
 
 int main(){
     int N;
@@ -39,12 +40,12 @@ int main(){
 
     c1[0]=-a[N-1];
     c2[0]=1;
-    printf("1 = ");
+    printf("1\t=");
     printf("%ld*%ld + %ld*%ld\n",c1[0],b[N-1],c2[0],b[N-2]);
-    for(int i=1;i<N;i++){
+    for(int i=1;i<(N-1);i++){
         c1[i]=-c1[i-1]*a[N-i-1]+c2[i-1];
         c2[i]=c1[i-1];
-        printf("%ld*%ld + %ld*%ld\n",c1[i],b[N-i-1],c2[i],b[N-i-2]);
+        printf("\t=%ld*%ld + %ld*%ld\n",c1[i],b[N-i-1],c2[i],b[N-i-2]);
     }
 
     return 0;
